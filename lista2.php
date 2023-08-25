@@ -12,5 +12,3 @@ echo $soma;
 
 
 ?>
-</body>
-</html>
