@@ -14,6 +14,7 @@
             return $this->resultado;
         }
         public function somar($n){
+            $this->memoria = $this->resultado;
             $this->resultado += $n;
         }
         public function subtrai($n){
@@ -40,6 +41,5 @@ $minhaCalculadora->somar(50);
 echo $minhaCalculadora->getRes();
 
 $minhaCalculadora->multiplica(20);
-
 echo "<br> = ". $minhaCalculadora->getRes();
 ?>
