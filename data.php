@@ -79,11 +79,9 @@ echo "<br>----------------<br><br>
 Método Set ";
 
 $minhaData->setDia(15);
-$minhaData->setMes(5);
+$minhaData->setMes(05);
 $minhaData->setAno(2024);
 
-
-echo "<br>";
 echo "<br>Dia:" .$minhaData->getDia();
 echo "<br>Mes:" .$minhaData->getMes();
 echo "<br>Ano:" .$minhaData->getAno();
