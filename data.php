@@ -43,12 +43,20 @@
             echo "Data: " .$this->dia ."/" .$this->mes  ."/" .$this->ano;
         }
 
-        public function biSexto($ano){
-            
+        public function diferencaDatas($dia, $mes, $ano){
+            $Sistema = $this->ano ."-" .$this->mes  ."-" .$this->dia;
+            $entrada = $ano ."-" .$mes  ."-" .$dia;
+            $datahoje = new DateTime($Sistema);
+            $dataEntrada = new DateTime($entrada);
+
+            $intervalo = $datahoje->diff($dataEntrada);
+            return $intervalo->days;
         }
+
+
     }
 
-$minhaData = new Data(01,06,2023);
+$minhaData = new Data(13,9,2023);
 echo $minhaData->dataCompleta();
 if ((($minhaData->getAno() % 4 == 0 and $minhaData->getAno() % 100 != 0)) || ($minhaData->getAno() % 400 == 0))
 {
@@ -56,4 +64,27 @@ if ((($minhaData->getAno() % 4 == 0 and $minhaData->getAno() % 100 != 0)) || ($m
 }else {
     echo "<br>Não Bisexto";
 }
+
+echo "<br>----------<br>";
+
+echo "<br>Diferença de dias: <br>";
+echo $minhaData->diferencaDatas(15,9,2023);
+echo "<br>----------<br>";
+echo "Testando os Gets:";
+echo "<br>Dia:" .$minhaData->getDia();
+echo "<br>Mes:" .$minhaData->getMes();
+echo "<br>Ano:" .$minhaData->getAno();
+
+echo "<br>----------------<br><br>
+Método Set ";
+
+$minhaData->setDia(15);
+$minhaData->setMes(5);
+$minhaData->setAno(2024);
+
+
+echo "<br>";
+echo "<br>Dia:" .$minhaData->getDia();
+echo "<br>Mes:" .$minhaData->getMes();
+echo "<br>Ano:" .$minhaData->getAno();
 ?>
