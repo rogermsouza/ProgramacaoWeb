@@ -83,5 +83,5 @@
     echo $voo1->getVagas(). "<br>";
     echo "Número do voo: " .$voo1->getVoo(). "<br>";
  
-
+echo "";
 ?>
